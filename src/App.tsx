@@ -1,13 +1,19 @@
 import React from 'react'
-import './App.css'
+import './App.scss'
+import './font.scss'
+import Header from './Header'
+import Contact from './Contact'
+import HomePage from './pages/home-page/HomePage'
 
 function App() {
  
 
   return (
-    <div>
-     <h1>hello</h1>
-    </div>
+    <>
+    <Header />
+    <HomePage/>
+    <Contact/>
+    </>
   )
 }
 
