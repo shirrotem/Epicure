@@ -1,0 +1,41 @@
+.hero {
+    background-image: url('../../assets/images/hero-picture\ 1.png');
+    background-size: cover;
+    background-repeat: no-repeat; 
+    padding: 20px;
+    height: 273px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+   
+  }
+
+  
+  .hero-search-label{
+    display: flex;
+    width: 90%;
+    height: 60%;
+    padding: 10px 5px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    flex-shrink: 0;
+    background-color: rgba(255, 255, 255, 0.88);
+
+    #hero-header {
+      text-align: center;
+    }
+
+    input[type="search"] {
+      width: 95%;
+      padding: 10px;
+      border-radius: 3px;
+      border-color: antiquewhite;
+    }
+
+   
+  }
+ 
+  
