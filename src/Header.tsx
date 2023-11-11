@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import './Header.scss';
 import cartIcon from "./assets/icons/cartIcon.svg";
 import hamburgerIcon from "./assets/icons/hamburgerIcon.svg";
@@ -7,18 +7,34 @@ import searchIcon from "./assets/icons/searchIcon.svg";
 import logoPic from "./assets/images/logoPic.png";
 
 const Header = () => {
+  const [isMobile,setIsMobile] = useState(window.innerWidth <= 900);
+  window.addEventListener('resize', () => {
+    setIsMobile(window.innerWidth <= 900)
+  });
+
   return (
     <div className="header">
-      <img src={hamburgerIcon} alt="Hamburger" />
-
-      <div className="logo">
-        <img src={logoPic} alt="Logo" />
-      </div>
+      {!isMobile && (
+        <div className="nav-labels">
+          <img className='logo' src={logoPic} alt="Logo" />
+          <div className="branding">
+            <h1>EPICURE</h1>
+            <h1>Restaurants</h1>
+            <h1>Chefs</h1>
+          </div>
+        </div>
+      )}
+      {isMobile && (
+        <>
+          <img src={hamburgerIcon} alt="Hamburger" />
+          <img className="logo" src={logoPic} alt="Logo" />
+        </>
+      )}
 
       <div className="navbar-images">
-        <img src={cartIcon} alt="Cart" />
-        <img src={profileIcon} alt="Profile" />
         <img src={searchIcon} alt="Search" />
+        <img src={profileIcon} alt="Profile" />
+        <img src={cartIcon} alt="Cart" />
       </div>
     </div>
   );
