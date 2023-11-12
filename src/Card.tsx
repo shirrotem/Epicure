@@ -1,11 +1,7 @@
 import React from "react";
 import './Card.scss';
 import {FC} from 'react';
-import oneStar from '../src/assets/icons/one-star-rat.svg';
-import twoStar from '../src/assets/icons/two-star-rat.svg';
-import threeStar from '../src/assets/icons/three-star-rat.svg';
-import fourStar from '../src/assets/icons/four-star-rate.svg';
-import fiveStar from '../src/assets/icons/five-star-rate.svg';
+import ratingsArr from "./data/cardData";'./data/cardData';
 import nisIcon from '../src/assets/icons/nis.svg';
 
 
@@ -20,7 +16,6 @@ interface CardProp{
 }
 
 const Card: FC<CardProp> = ({ title, img, subtitle, rating, icon, price }) => {
-    const ratingsArr = [oneStar,twoStar,threeStar,fourStar,fiveStar];
     return (
       <div className="card">
         <img src={img} alt={title} />
