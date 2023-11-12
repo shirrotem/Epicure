@@ -1,22 +1,19 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
-const useMobileCheck = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
-
-  const handleResize = useCallback(()=>{
-    setIsMobile(window.innerWidth <= 900);
-
-  }, []);
+  const useMobileCheck = (mobileWidth = 900) => {
+  const [width, setWidth] = useState(window.innerWidth);
+  const isMobile = useMemo(() => width <= mobileWidth, [width, mobileWidth]);
 
   useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+
     window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [handleResize]);
+  }, []);
 
   return isMobile;
 };
-
 export default useMobileCheck;
