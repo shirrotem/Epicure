@@ -1,0 +1,66 @@
+.card {
+    border: 1px solid #ddd;
+    overflow: hidden;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 380px;
+    height: fit-content;
+    background-color: #F9F4EA;
+
+    img {
+        width: 380px;
+        height: 236px;
+    }
+  
+    .card-content {
+      padding: 10px;
+
+      .icon-dish{
+        width: 29px;
+        height: 29px;
+      }
+
+      .icon-rating{
+        width: 216px;
+        height: 40px;
+      }
+
+      .icon-nis{
+        width: 14px;
+        height: 19px;   
+      }
+
+      .card-title {
+        font-size: 40px;
+        font-weight: 400;
+        margin-bottom: 8px;
+      }
+  
+      .card-subtitle {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 200;
+      }
+
+
+      .price-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+
+
+        .card-price{
+            color: #000;
+            text-align: center;
+            font-family: Helvetica Neue;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 200;
+            line-height: 30px;
+            letter-spacing: 1.97px;
+        }
+      }
+    }
+  }
+  
