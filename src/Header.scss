@@ -3,26 +3,32 @@
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
-  color: #fff;
   padding: 5px;
-  width: 100%;
-
 
   .navbar-images {
-    img{
+    img {
       height: 24px;
       margin: 5px;
     }
   }
 
   .logo {
+    height: 32px;
+  }
+
+  .nav-labels {
     display: flex;
     align-items: center;
-    gap: 10px; 
-    
+
+    .branding {
+      display: flex;
+      gap: 10px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: normal;
+    }
   }
-}
-
-@media (max-width: 900px) {
-
 }
