@@ -1,16 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import './Header.scss';
 import cartIcon from "./assets/icons/cartIcon.svg";
 import hamburgerIcon from "./assets/icons/hamburgerIcon.svg";
 import profileIcon from "./assets/icons/profileIcon.svg";
 import searchIcon from "./assets/icons/searchIcon.svg";
 import logoPic from "./assets/images/logoPic.png";
+import useMobileCheck from "./shared/hooks/useMobileCheck";
 
 const Header = () => {
-  const [isMobile,setIsMobile] = useState(window.innerWidth <= 900);
-  window.addEventListener('resize', () => {
-    setIsMobile(window.innerWidth <= 900)
-  });
+  const isMobile = useMobileCheck();
 
   return (
     <div className="header">
