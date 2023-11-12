@@ -1,24 +1,23 @@
 import React from "react";
 import AboutUs from "./AboutUs";
 import Hero from "./Hero";
-import Card from "../../Card";
-import claroImg from "../../assets/images/claro.png";
-import spicyIcon from "../../assets/icons/spicy.svg"
+import Carousel from "./Carousel";
+import data from "../../data/MockData";
+import './HomePage.scss';
+
+
 
 const HomePage = () => {
+
     return (
         <>
         <Hero/>
-        <div>
-        <Card
-            title="Claro"
-            img= {claroImg}
-            subtitle="Ran Shmueli"
-            rating={4}
-            icon={spicyIcon}
-            price="88"
-        />
-        </div>
+        <p className="titleSwiper">POPULAR RESTAURANT IN EPICURE:</p>
+        <Carousel type={data.restaurants} typeName="restaurants"/>
+        <p className="titleSwiper">SIGNATURE DISH OF:</p>
+        <Carousel type={data.dishes} typeName="dishes"/>
+        <p className="titleSwiperChef">YOSSI’S RESTAURANTS:</p>
+        <Carousel type={data.chefRestaurants} typeName="chefRestaurants"/>
         <AboutUs />
         </>
     );

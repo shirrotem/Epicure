@@ -3,43 +3,52 @@
     overflow: hidden;
     margin: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 380px;
+    width: 245px;
     height: fit-content;
     background-color: #F9F4EA;
-
+    
     img {
-        width: 380px;
-        height: 236px;
+        width: 245px;
+        height: 151px;
     }
   
     .card-content {
-      padding: 10px;
+      display: flex;
+      width: 245px;
+      padding: 16px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      text-align: left;
 
       .icon-dish{
-        width: 29px;
-        height: 29px;
-      }
-
-      .icon-rating{
-        width: 216px;
-        height: 40px;
+        display: flex;
+        width: 30px;
+        height: 24px;
+        padding: 0px 0.183px 1.022px 0px;
+        justify-content: center;
+        align-items: center;
       }
 
       .icon-nis{
-        width: 14px;
-        height: 19px;   
+        width: 8.105px;
+        height: 11px;  
       }
 
       .card-title {
-        font-size: 40px;
+        font-size: 18px;
+        font-style: normal;
         font-weight: 400;
-        margin-bottom: 8px;
+        line-height: normal;
+        letter-spacing: 2.67px;
       }
   
       .card-subtitle {
-        margin: 0;
-        font-size: 24px;
+        font-size: 16px;
+        font-style: normal;
         font-weight: 200;
+        line-height: 20px; /* 125% */
+        letter-spacing: 1.97px;
       }
 
 
@@ -57,10 +66,87 @@
             font-size: 24px;
             font-style: normal;
             font-weight: 200;
-            line-height: 30px;
             letter-spacing: 1.97px;
         }
       }
     }
-  }
+
+    //Desktop
+    @media (min-width: 901px) {
+      display: flex;
+      padding: 24px 0px 8px 0px;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      flex: 1 0 0;
+      align-self: stretch;
+      width: 380px;
+      
+      img {
+        width: 380px;
+        height: 236px;
+      }
+
+      .card-content {
+        padding: 10px;
+        align-items: center;
   
+        .icon-dish{
+          display: flex;
+          width: 40px;
+          height: 31px;
+          padding: 0px 0.243px 1.32px 0px;
+          justify-content: center;
+          align-items: center;
+        }
+  
+        .icon-rating{
+          width: 216px;
+          height: 40px;
+        }
+  
+        .icon-nis{
+          width: 14px;
+          height: 19px;   
+        }
+  
+        .card-title {
+          text-align: center;
+          font-size: 40px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 47px; /* 117.5% */
+          letter-spacing: 2.67px;
+        }
+    
+        .card-subtitle {
+          text-align: center;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 200;
+          line-height: 30px; /* 125% */
+          letter-spacing: 1.97px;
+        }
+  
+  
+        .price-container{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 8px;
+  
+  
+          .card-price{
+              color: #000;
+              text-align: center;
+              font-family: Helvetica Neue;
+              font-size: 24px;
+              font-style: normal;
+              font-weight: 200;
+              line-height: 30px;
+              letter-spacing: 1.97px;
+          }
+        }
+    }
+  }
+}
