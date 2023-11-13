@@ -3,7 +3,6 @@
     padding-inline-start: 0px;
     background-color: #FFF;
     flex-shrink: 0;
-    width: 377px;
     height: 202px; 
     display: flex;
     flex-direction: column;
@@ -17,11 +16,12 @@
     @media (min-width: 901px) {
         display: flex;
         flex-direction: row; 
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
         gap: 10px;
         align-self: stretch;
         margin: 0 auto;
+        height: 85px;
     }
     
 }

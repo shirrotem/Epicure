@@ -1,11 +1,11 @@
 import React from "react";
 import './Header.scss';
-import cartIcon from "./assets/icons/cartIcon.svg";
-import hamburgerIcon from "./assets/icons/hamburgerIcon.svg";
-import profileIcon from "./assets/icons/profileIcon.svg";
-import searchIcon from "./assets/icons/searchIcon.svg";
-import logoPic from "./assets/images/logoPic.png";
-import useMobileCheck from "./shared/hooks/useMobileCheck";
+import cartIcon from "../../../assets/icons/cartIcon.svg";
+import hamburgerIcon from "../../../assets/icons/hamburgerIcon.svg";
+import profileIcon from "../../../assets/icons/profileIcon.svg";
+import searchIcon from "../../../assets/icons/searchIcon.svg";
+import logoPic from "../../../assets/images/logoPic.png";
+import useMobileCheck from "../../hooks/useMobileCheck";
 
 const Header = () => {
   const isMobile = useMobileCheck();
