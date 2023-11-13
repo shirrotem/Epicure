@@ -1,40 +1,30 @@
 import React from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/pagination';
-import Card from "../../Card";
+import Card from "../../../../shared/components/Card/Card";
 import {FC} from 'react';
-import useMobileCheck from "../../shared/hooks/useMobileCheck";
-import arrowsIcon from "../../assets/icons/arrows.svg";
-import './Carousel.scss'
+import useMobileCheck from "../../../../shared/hooks/useMobileCheck";
+import arrowsIcon from "../../../../assets/icons/arrows.svg";
+import './Carousel.scss';
+import CarouselProps from "../../../../data/types/carouselProps";
 
-
-interface CarouselProps {
-  type: any;
-  typeName: string;
-}
 
 const Carousel: FC<CarouselProps> = ({ type, typeName }) => {
   const isMobile = useMobileCheck();
-  const slideStyle = {
-    width: isMobile ? '245px' : '380px',
-  }
     return(
         <>
         <Swiper
-          slidesPerView={isMobile? 1 : 3}
+          slidesPerView={isMobile? 'auto' : 3}
           spaceBetween={30}
           pagination={{
             clickable: true,
           }}
-          modules={[Pagination]}
-          className="mySwiper"
+          className="myCarousel"
         >
           {type.map((element: any, index: number)=> {
             const isDish = typeName === "dishes";
             return(
-              <SwiperSlide key={index} style={slideStyle}>
+              <SwiperSlide key={index} className={isMobile ? "swiperSlideCarousel": ""}>
               <Card
               title= {element.name}
               img= {element.img}

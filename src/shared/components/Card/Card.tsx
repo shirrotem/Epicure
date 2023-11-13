@@ -1,22 +1,15 @@
 import React from "react";
 import './Card.scss';
 import {FC} from 'react';
-import ratingsArr from "./data/cardData";
-import nisIcon from '../src/assets/icons/nis.svg';
-import useMobileCheck from "./shared/hooks/useMobileCheck";
+import ratingsArr from "../../../data/cardData";
+import nisIcon from '../../../assets/icons/nis.svg';
+import useMobileCheck from "../../hooks/useMobileCheck";
+import CardProps from "../../../data/types/cardProps";
 
 
-interface CardProp{
-    title: string;
-    img: string;
-    subtitle?: string;
-    rating?: number;
-    icon?: string;
-    price?: string;
 
-}
 
-const Card: FC<CardProp> = ({ title, img, subtitle, rating, icon, price }) => {
+const Card: FC<CardProps> = ({ title, img, subtitle, rating, icon, price }) => {
     const isMobile = useMobileCheck();
 
     return (

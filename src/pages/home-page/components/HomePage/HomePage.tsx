@@ -1,8 +1,8 @@
 import React from "react";
-import AboutUs from "./AboutUs";
-import Hero from "./Hero";
-import Carousel from "./Carousel";
-import data from "../../data/MockData";
+import AboutUs from "../AboutUs/AboutUs";
+import Hero from "../Hero/Hero";
+import Carousel from "../Carousel/Carousel";
+import data from "../../../../data/MockData";
 import './HomePage.scss';
 
 

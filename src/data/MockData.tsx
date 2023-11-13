@@ -9,8 +9,9 @@ import veganIcon from "../assets/icons/vegan.svg";
 import onzaImg from "../assets/images/onzaImg.png";
 import kitchenMarketImg from "../assets/images/kitchenMarket.png";
 import mashyaImg from "../assets/images/mashyaImg.png";
+import Data from "./types/data";
 
-const data = {
+const data: Data = {
     restaurants: [
         {
             img: claroImg,
