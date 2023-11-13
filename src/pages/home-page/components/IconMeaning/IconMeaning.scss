@@ -1,0 +1,78 @@
+.iconsMeaningContainer {
+    display: flex;
+    width: 100%;
+    height: 584px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    flex-shrink: 0;
+    background-color: #FAFAFA;
+  
+    .iconsTitle {
+      font-size: 18px;
+      font-weight: 200;
+      line-height: 35px;
+      letter-spacing: 1.25px;
+      text-transform: uppercase;
+    }
+  
+    .iconsContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+      .iconContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+  
+        .iconSpicy {
+          display: flex;
+          width: 46.42px;
+          height: 35.976px;
+          padding: 0px 0.282px 1.532px 0px;
+          justify-content: center;
+          align-items: center;
+        }
+  
+        .icon {
+          display: flex;
+          width: 77.419px;
+          height: 60px;
+          padding: 1.935px 9.986px 1.786px 11.613px;
+          justify-content: center;
+          align-items: center;
+        }
+  
+        label {
+          text-align: center;
+          font-size: 18px;
+          font-weight: 200;
+          line-height: 30px;
+          letter-spacing: 1.97px;
+        }
+      }
+      @media (min-width: 901px) {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    
+        .iconSpicy {
+          order: 1;
+          width: 77.419px !important;
+          height: 60px !important;
+        }
+    
+        .icon {
+          order: 2;
+        }
+    
+        label {
+          order: 3;
+        }
+      }
+    }
+  }
+  

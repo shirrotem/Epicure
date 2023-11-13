@@ -1,0 +1,70 @@
+.chefOfTheWeekContainer {
+    text-align: center;
+  
+    .titleChef {
+      font-size: 18px;
+      font-weight: 200;
+      line-height: 35px;
+      letter-spacing: 1.25px;
+      text-transform: uppercase;
+      text-align: left;
+    }
+  
+    .chefImageContainer {
+      position: relative;
+      display: inline-block;
+  
+      .imgChef {
+        width: 360px;
+        height: 338px;
+        flex-shrink: 0;
+      }
+  
+      .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 10px;
+        box-sizing: border-box;
+        height: 47px;
+  
+        .nameChef {
+          text-align: center;
+          font-size: 18px;
+          font-weight: 400;
+          letter-spacing: 2.67px;
+          top: 100%;
+          transform: translateY(-60%);
+          font-weight: bold;
+        }
+      }
+    }
+  
+    .aboutChef {
+      text-align: justify;
+      font-size: 18px;
+      font-weight: 200;
+      line-height: 28px;
+      letter-spacing: 1.25px;
+    }
+  
+    @media (min-width: 901px) {
+      .picAndAboutContainer {
+        display: flex;
+        align-items: flex-start;
+        gap: 24px;
+  
+        .chefImageContainer {
+          flex: 1;
+          margin-left: 20px;
+        }
+  
+        .aboutChef {
+          order: 1;
+        }
+      }
+    }
+  }
+  
