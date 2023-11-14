@@ -6,6 +6,7 @@ import data from "../../../../data/MockData";
 import './HomePage.scss';
 import ChefOfTheWeek from "../ChefOfTheWeek/ChefOfTheWeek";
 import IconMeaning from "../IconMeaning/IconMeaning";
+import { iconsArray } from "../../../../data/MockData";
 
 
 
@@ -18,7 +19,7 @@ const HomePage = () => {
         <Carousel type={data.restaurants} typeName="restaurants"/>
         <p className="titleSwiper">SIGNATURE DISH OF:</p>
         <Carousel type={data.dishes} typeName="dishes"/>
-        <IconMeaning/>
+        <IconMeaning icons={iconsArray}/>
         <ChefOfTheWeek chef={data.chefOfTheWeek}/>
         <AboutUs />
         </>

@@ -9,11 +9,14 @@ import CardProps from "../../../data/types/cardProps";
 
 
 
-const Card: FC<CardProps> = ({ title, img, subtitle, rating, icon, price }) => {
+const Card: FC<CardProps> = ({ title, img, subtitle, rating, icon, price, type }) => {
     const isMobile = useMobileCheck();
+    const isRestaurant = type === 'restaurants';
+    const isDish = type === 'dishes';
+    const isChef = type === 'chefRestaurants';
 
     return (
-      <div className="card">
+      <div className={`card ${isRestaurant ? 'restaurant-card' : isDish ? 'dish-card' : isChef ? 'chef-card' : ''}`}>
         <img src={img} alt={title} />
         <div className="card-content">
           <p className="card-title">{title}</p>

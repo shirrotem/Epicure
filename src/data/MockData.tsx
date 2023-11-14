@@ -11,6 +11,10 @@ import kitchenMarketImg from "../assets/images/kitchenMarket.png";
 import mashyaImg from "../assets/images/mashyaImg.png";
 import Data from "./types/data";
 import chefYossiImg from "../assets/images/chefYossi.png";
+import { Icon } from "./types/icon";
+import iconSpicy from '../assets/icons/spicy.svg';
+import iconVegitarian from '../assets/icons/vegitarian.svg';
+import iconVegan from '../assets/icons/vegan.svg';
 
 const data: Data = {
     restaurants: [
@@ -53,7 +57,7 @@ const data: Data = {
             img:smokedPizzaImg,
             name: 'Smoked Pizza',
             icon:veganIcon,
-            ingredients: 'Basil dough, cashew "butter", demi-glace, bison & radish & sweet sauce',
+            ingredients: 'Basil dough, cashew "butter", demi-glace, bison & radish',
             price: 65
         }
     ],
@@ -81,3 +85,10 @@ const data: Data = {
 };
 
 export default data;
+
+export const iconsArray: Icon[] = [
+    { name: 'Spicy', icon: iconSpicy },
+    { name: 'Vegetarian', icon: iconVegitarian },
+    { name: 'Vegan', icon: iconVegan },
+  ];
+   

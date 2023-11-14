@@ -4,6 +4,7 @@
   align-items: center;
   background-color: #fff;
   padding: 5px;
+  height: 46px;
 
   .navbar-images {
     img {
@@ -30,5 +31,10 @@
       font-size: 1.5rem;
       font-weight: normal;
     }
+  }
+  @media (min-width: 901px){
+    padding: 14px;
+    gap: 14px;
+
   }
 }

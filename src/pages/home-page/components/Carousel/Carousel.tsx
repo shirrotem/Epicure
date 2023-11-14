@@ -32,6 +32,7 @@ const Carousel: FC<CarouselProps> = ({ type, typeName }) => {
               rating={element.rating}
               icon={element.icon}
               price={element.price}
+              type= {typeName}
               />
               </SwiperSlide>
             );
