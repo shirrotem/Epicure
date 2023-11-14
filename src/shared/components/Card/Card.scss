@@ -4,7 +4,6 @@
     margin: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #F9F4EA;
-
     &.restaurant-card {
       width: 245px;
       height: 232.8px;
@@ -13,6 +12,11 @@
     &.dish-card {
       width: 245px;
       height: 388px;
+
+      .card-subtitle {
+        width: 209px;
+        height: 100px;
+      }
     }
   
     &.chef-card {
@@ -28,6 +32,7 @@
     .card-content {
       text-align: left;
 
+
       .icon-dish{
         display: flex;
         width: 30px;
@@ -37,10 +42,7 @@
         align-items: center;
       }
 
-      .icon-nis{
-        width: 8.105px;
-        height: 11px;  
-      }
+     
 
       .card-title {
         font-size: 18px;
@@ -48,32 +50,30 @@
         line-height: normal;
         letter-spacing: 2.67px;
       }
-  
+
       .card-subtitle {
         font-size: 16px;
         font-weight: 200;
         line-height: 20px;
         letter-spacing: 1.97px;
-        width: 209px;
-        height: 100px;
 
       }
-
-
       .price-container{
         display: flex;
-        justify-content: center;
         align-items: center;
         gap: 8px;
         height: 19px;
-        width: 20px;
-
 
         .card-price{
           font-size: 16px;
           font-weight: 400;
           line-height: 19px;
           letter-spacing: 1.97px;
+        }
+
+        .icon-nis{
+          width: 8.105px;
+          height: 11px;  
         }
       }
     }
@@ -85,10 +85,7 @@
       
       .card-content {
         align-items: center;
-        padding: 24px 0px 8px 0px;
-        gap: 8px;
-        flex: 1 0 0;
-        align-self: stretch;
+       
   
         .icon-dish{
           display: flex;
@@ -152,6 +149,10 @@
       img {
         width: 380px;
         height: 236px;
+      }
+      .card-content {
+        height: 169px;
+
       }
     }
 
