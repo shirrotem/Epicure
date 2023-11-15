@@ -15,10 +15,8 @@ const HomePage = () => {
     return (
         <>
         <Hero/>
-        <p className="titleSwiper">POPULAR RESTAURANT IN EPICURE:</p>
-        <Carousel type={data.restaurants} typeName="restaurants"/>
-        <p className="titleSwiper">SIGNATURE DISH OF:</p>
-        <Carousel type={data.dishes} typeName="dishes"/>
+        <Carousel type={data.restaurants} typeName="restaurants" title="POPULAR RESTAURANT IN EPICURE:"/>
+        <Carousel type={data.dishes} typeName="dishes" title="SIGNATURE DISH OF:"/>
         <IconMeaning icons={iconsArray}/>
         <ChefOfTheWeek chef={data.chefOfTheWeek}/>
         <AboutUs />

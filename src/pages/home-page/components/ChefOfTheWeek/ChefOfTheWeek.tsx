@@ -20,8 +20,7 @@ const ChefOfTheWeek: FC<ChefOfTheWeekProps> = ({chef}) => {
             {about}
         </p>
         </div>
-        <p className="titleSwiperChef">{`${chefPrivateName}’s Restaurants:`}</p>
-            <Carousel type={chefRestaurants} typeName="chefRestaurants"/>
+            <Carousel type={chefRestaurants} typeName="chefRestaurants" title={`${chefPrivateName}’s Restaurants:`}/>
         </div>
         
     );

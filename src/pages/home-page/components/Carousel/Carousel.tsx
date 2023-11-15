@@ -9,10 +9,11 @@ import './Carousel.scss';
 import CarouselProps from "../../../../data/types/carouselProps";
 
 
-const Carousel: FC<CarouselProps> = ({ type, typeName }) => {
+const Carousel: FC<CarouselProps> = ({ type, typeName, title}) => {
   const isMobile = useMobileCheck();
     return(
         <>
+        <p className={typeName==='chefRestaurants' ? 'titleSwiperChef' : 'titleSwiper'}>{title}</p>
         <Swiper
           slidesPerView={isMobile? 'auto' : 3}
           spaceBetween={30}
@@ -20,6 +21,7 @@ const Carousel: FC<CarouselProps> = ({ type, typeName }) => {
             clickable: true,
           }}
           className="myCarousel"
+        
         >
           {type.map((element: any, index: number)=> {
             const isDish = typeName === "dishes";
