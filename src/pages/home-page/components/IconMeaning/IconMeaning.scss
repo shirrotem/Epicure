@@ -8,14 +8,17 @@
     gap: 32px;
     flex-shrink: 0;
     background-color: #FAFAFA;
-  
+    margin-left: -10px;
     .iconsTitle {
       font-size: 18px;
       font-weight: 200;
       line-height: 35px;
       letter-spacing: 1.25px;
       text-transform: uppercase;
-    }
+      @media (min-width: 901px) {
+        font-size: 30px;
+        letter-spacing: 2.14px;
+      }}
   
     .iconsContainer {
         display: flex;
@@ -74,6 +77,12 @@
           order: 3;
         }
       }
+    }
+    @media (min-width: 901px) {
+      height: 265px;
+      gap: 32px;
+      padding-top: 36px;
+      padding-bottom: 36px;
     }
   }
   

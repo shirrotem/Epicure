@@ -1,7 +1,14 @@
 .swiperSlideCarousel{
     width: 245px !important;
 
-    }
+    @media (min-width: 901px) {
+      width:381px !important;
+  }
+ }
+
+ .swiperSlideChef{
+  width: 245px !important;
+ }
 
 .allRestaurants {
     display: flex;
@@ -13,7 +20,10 @@
     line-height: 35px;
     letter-spacing: 2px;
     text-transform: capitalize;
+    @media (min-width: 901px) {
+      justify-content: flex-end;
   }
+}
   
   .picAllRes {
     width: 24px;

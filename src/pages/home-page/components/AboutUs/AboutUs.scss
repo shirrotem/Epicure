@@ -1,13 +1,86 @@
 .about-us{
-  padding: 5px;
+  background-color: #FAFAFA;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
-  h1 {
-    text-align: left;
-    font-weight: normal;
+  .epicureLogo{
+    width: 102px;
+    height: 90px;
   }
-  
-  p {
-    text-align: left;
+  .playAndGoogleLogos{
+    display: flex;
+    flex-direction: column;
+
+    .googlePlayLogo,
+    .appleLogo {
+      padding: 7px 12px;
+      gap: 7px;
+      width: 180px;
+      height: 52px;
+      }
   }
-  
+
+  .content{
+    text-align: left;
+
+      h1 {
+        font-size: 18px;
+        font-weight: 200;
+        line-height: 35px; 
+        letter-spacing: 1.25px;
+        text-transform: uppercase;
+        margin: 0;
+      }
+      
+      p {
+          text-align: left;
+          font-size: 18px;
+          font-weight: 200;
+          line-height: 28px; 
+          letter-spacing: 2.14px;
+          margin: 0;
+      }
+}
+
+  @media (min-width: 901px) {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 529px;
+
+    .epicureLogo {
+      order: 1; 
+      flex-direction: row;
+      align-self:center;
+      width: 170px;
+      height: 166px;
+      margin-left: 250px;
+    }
+
+    .playAndGoogleLogos{
+     flex-direction:row-reverse;
+     align-self: flex-end; 
+    }
+
+    .content{
+      
+        h1 {
+          font-size: 30px;
+          font-weight: 200;
+          line-height: 35px;
+          letter-spacing: 2.14px;
+          text-transform: uppercase;
+        }
+        
+        p {
+          font-size: 20px;
+          font-weight: 200;
+          line-height: 30px;
+          letter-spacing: 2.14px;
+        }
+    }
+
+  }
+
 }

@@ -4,6 +4,15 @@
     line-height: 24px;
     letter-spacing: 1.25px;
     text-transform: uppercase;
+    text-align: left;
+   
+
+    @media (min-width: 901px) {
+        text-align: center;
+        font-size: 30px;
+        font-weight: 200;
+        line-height: 35px; /* 116.667% */
+    }
 }
 
 .titleSwiperChef{
@@ -12,5 +21,13 @@
     line-height: 25px;
     letter-spacing: 1.25px;
     text-transform: uppercase;
+    text-align: left;
+
+    @media (min-width: 901px) {
+        font-size: 30px;
+        font-weight: 200;
+        line-height: 35px; /* 116.667% */
+        text-transform: capitalize;
+    }
 
 }

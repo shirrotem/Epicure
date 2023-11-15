@@ -2,10 +2,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
   padding: 5px;
   height: 46px;
-
+  
+  
+  
   .navbar-images {
     img {
       height: 24px;
@@ -28,8 +29,11 @@
 
     h1 {
       margin: 0;
-      font-size: 1.5rem;
-      font-weight: normal;
+      font-size: 18px;
+      font-weight: 200;
+      line-height: normal;
+      letter-spacing: 1.92px;
+
     }
   }
   @media (min-width: 901px){

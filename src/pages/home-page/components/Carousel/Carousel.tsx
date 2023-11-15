@@ -24,7 +24,7 @@ const Carousel: FC<CarouselProps> = ({ type, typeName }) => {
           {type.map((element: any, index: number)=> {
             const isDish = typeName === "dishes";
             return(
-              <SwiperSlide key={index} className={isMobile ? "swiperSlideCarousel": ""}>
+              <SwiperSlide key={index} className={typeName === 'chefRestaurants' ? 'swiperSlideChef' : "swiperSlideCarousel"}>
               <Card
               title= {element.name}
               img= {element.img}
@@ -38,8 +38,8 @@ const Carousel: FC<CarouselProps> = ({ type, typeName }) => {
             );
           })}
         </Swiper>
-        <p className="allRestaurants">All Restaurants
-          <img className="picAllRes" src={arrowsIcon}/></p>
+       {(isMobile || (!isMobile && typeName=== 'restaurants')) && <p className="allRestaurants">All Restaurants
+          <img className="picAllRes" src={arrowsIcon}/></p>}
       </>
 
     );

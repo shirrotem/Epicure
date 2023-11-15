@@ -1,6 +1,5 @@
 import React from 'react'
 import './App.scss'
-import './font.scss'
 import Header from './shared/components/Header/Header'
 import Contact from './shared/components/Contact/Contact'
 import HomePage from './pages/home-page/components/HomePage/HomePage'
