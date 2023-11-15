@@ -6,6 +6,12 @@
   }
  }
 
+ @media (min-width: 901px) {
+ .swiper-wrapper{
+  justify-content: center !important;
+ }
+}
+
  .swiperSlideChef{
   width: 245px !important;
  }
