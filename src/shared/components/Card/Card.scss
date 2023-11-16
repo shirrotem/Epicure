@@ -23,7 +23,7 @@
     padding: 16px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
+    gap: 8px;
 
     .card-title {
       font-size: 18px;
@@ -95,13 +95,10 @@
     }
   
     .card-content {
-      display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      gap: 16px;
-  
+     
       .icon-dish,
       .icon-rating,
       .icon-nis {
@@ -113,15 +110,13 @@
         font-size: 35px;
         line-height: 47px;
         letter-spacing: 2.67px;
-        margin: 0;
+       
       }
   
       .card-subtitle {
         font-size: 24px;
         line-height: 30px;
-        letter-spacing: 1.97px;
-        margin: 0;
-  
+        
         &.restaurant-card {
           width: 146px;
           height: 30px;
