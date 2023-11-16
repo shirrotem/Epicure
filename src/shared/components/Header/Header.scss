@@ -2,8 +2,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
-  padding: 5px;
+  height: 46px;
+  padding: 10px;
+  padding-left: 16px;
+  padding-right: 16px;
 
   .navbar-images {
     img {
@@ -27,8 +29,46 @@
 
     h1 {
       margin: 0;
-      font-size: 1.5rem;
-      font-weight: normal;
+      font-size: 18px;
+      font-weight: 200;
+      line-height: normal;
+      letter-spacing: 1.92px;
+      margin-top: 5px;
     }
+    .epicure{
+      font-size: 27px;
+      font-weight: 200;
+      letter-spacing: 1.35px;
+      margin-top: 0px;
+    }
+  }
+  @media (min-width: 901px){
+    padding: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+    gap: 14px;
+
+    .nav-labels{
+      h1{
+      font-size: 20px;
+      margin-left: 20px;
+      }
+      gap: 30px;
+    }
+
+    .navbar-images {
+      img {
+        height: 24px;
+        margin: 10px;
+      }
+    }
+
+    .logo {
+      height: 32px;
+    }
+  
+
+
+      
   }
 }

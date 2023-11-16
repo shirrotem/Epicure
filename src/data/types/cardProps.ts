@@ -5,6 +5,7 @@ interface CardProps{
     rating?: number;
     icon?: string;
     price?: string;
+    type: string;
 
 }
 export default CardProps;

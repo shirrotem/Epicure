@@ -10,6 +10,11 @@ import onzaImg from "../assets/images/onzaImg.png";
 import kitchenMarketImg from "../assets/images/kitchenMarket.png";
 import mashyaImg from "../assets/images/mashyaImg.png";
 import Data from "./types/data";
+import chefYossiImg from "../assets/images/chefYossi.png";
+import { Icon } from "./types/icon";
+import iconSpicy from '../assets/icons/spicy.svg';
+import iconVegitarian from '../assets/icons/vegitarian.svg';
+import iconVegan from '../assets/icons/vegan.svg';
 
 const data: Data = {
     restaurants: [
@@ -52,24 +57,38 @@ const data: Data = {
             img:smokedPizzaImg,
             name: 'Smoked Pizza',
             icon:veganIcon,
-            ingredients: 'Basil dough, cashew "butter", demi-glace, bison & radish & sweet sauce',
+            ingredients: 'Basil dough, cashew "butter", demi-glace, bison & radish',
             price: 65
         }
     ],
-    chefRestaurants: [
-        {
-            img: onzaImg,
-            name: 'Onza'
-        },
-        {
-            img: kitchenMarketImg,
-            name: 'Kitchen Market'
-        },
-        {
-            img: mashyaImg,
-            name: 'Mashya'
-        },
-    ],
+
+    chefOfTheWeek:{
+        img: chefYossiImg,
+        name:'Yossi Shitrit',
+        about: 'Chef Yossi Shitrit has been living and breathing his culinary dreams for more than two decades, including running the kitchen in his first restaurant, the fondly-remembered Violet, located in Moshav Udim. Shitrit`s creativity and culinary acumen born of long experience are expressed in every detail of each and every dish.',
+        chefRestaurants: [
+            {
+                img: onzaImg,
+                name: 'Onza'
+            },
+            {
+                img: kitchenMarketImg,
+                name: 'Kitchen Market'
+            },
+            {
+                img: mashyaImg,
+                name: 'Mashya'
+            },
+        ],
+
+    }
 };
 
 export default data;
+
+export const iconsArray: Icon[] = [
+    { name: 'Spicy', icon: iconSpicy },
+    { name: 'Vegetarian', icon: iconVegitarian },
+    { name: 'Vegan', icon: iconVegan },
+  ];
+   

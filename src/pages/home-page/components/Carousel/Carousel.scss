@@ -1,7 +1,65 @@
+.myCarousel{
+  padding-left: 16px;
+  @media (min-width: 901px) {
+    padding-left: 0px;
+  }
+}
+
+.titleSwiper{
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 24px;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 16px;
+  margin: 0px;
+ 
+
+  @media (min-width: 901px) {
+      text-align: center;
+      font-size: 30px;
+      font-weight: 200;
+      line-height: 35px;
+  }
+}
+
+.titleSwiperChef{
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 25px;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 16px;
+  margin: 0px;
+
+  @media (min-width: 901px) {
+      font-size: 30px;
+      font-weight: 200;
+      line-height: 35px; 
+      text-transform: capitalize;
+  }
+
+}
+
 .swiperSlideCarousel{
     width: 245px !important;
 
-    }
+    @media (min-width: 901px) {
+      width:381px !important;
+  }
+ }
+
+ @media (min-width: 901px) {
+ .swiper-wrapper{
+  justify-content: center !important;
+ }
+}
+
+ .swiperSlideChef{
+  width: 245px !important;
+ }
 
 .allRestaurants {
     display: flex;
@@ -13,7 +71,12 @@
     line-height: 35px;
     letter-spacing: 2px;
     text-transform: capitalize;
+    padding: 16px;
+    margin: 0px;
+    @media (min-width: 901px) {
+      justify-content: flex-end;
   }
+}
   
   .picAllRes {
     width: 24px;

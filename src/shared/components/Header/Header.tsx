@@ -16,7 +16,7 @@ const Header = () => {
         <div className="nav-labels">
           <img className='logo' src={logoPic} alt="Logo" />
           <div className="branding">
-            <h1>EPICURE</h1>
+            <h1 className='epicure'>EPICURE</h1>
             <h1>Restaurants</h1>
             <h1>Chefs</h1>
           </div>

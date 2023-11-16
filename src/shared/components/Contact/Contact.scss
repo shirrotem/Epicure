@@ -1,16 +1,20 @@
 .contact-us {
-    text-align: left;
-    padding-inline-start: 0px;
-    background-color: #FFF;
-    flex-shrink: 0;
-    height: 202px; 
-    display: flex;
+    font-size: 18px;
+    font-weight: 200;
+    letter-spacing: 1.92px; 
+    display:flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 40px;
+    padding: 24px;
+    margin: 0px;
     
+    
+        
     li {
         list-style-type: none;
         margin-top: 10px;
+
     }
 
     @media (min-width: 901px) {

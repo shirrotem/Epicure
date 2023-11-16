@@ -4,6 +4,9 @@ import Hero from "../Hero/Hero";
 import Carousel from "../Carousel/Carousel";
 import data from "../../../../data/MockData";
 import './HomePage.scss';
+import ChefOfTheWeek from "../ChefOfTheWeek/ChefOfTheWeek";
+import IconMeaning from "../IconMeaning/IconMeaning";
+import { iconsArray } from "../../../../data/MockData";
 
 
 
@@ -12,12 +15,10 @@ const HomePage = () => {
     return (
         <>
         <Hero/>
-        <p className="titleSwiper">POPULAR RESTAURANT IN EPICURE:</p>
-        <Carousel type={data.restaurants} typeName="restaurants"/>
-        <p className="titleSwiper">SIGNATURE DISH OF:</p>
-        <Carousel type={data.dishes} typeName="dishes"/>
-        <p className="titleSwiperChef">YOSSI’S RESTAURANTS:</p>
-        <Carousel type={data.chefRestaurants} typeName="chefRestaurants"/>
+        <Carousel type={data.restaurants} typeName="restaurants" title="POPULAR RESTAURANT IN EPICURE:"/>
+        <Carousel type={data.dishes} typeName="dishes" title="SIGNATURE DISH OF:"/>
+        <IconMeaning icons={iconsArray}/>
+        <ChefOfTheWeek chef={data.chefOfTheWeek}/>
         <AboutUs />
         </>
     );
