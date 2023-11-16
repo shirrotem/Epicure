@@ -134,9 +134,6 @@
       }
   
       .price-container {
-        display: flex;
-        align-items: center;
-        gap: 8px;
         height: 30px;
         width: auto;
   
@@ -149,109 +146,4 @@
       }
     }
   }
-  
-
-  // @media (min-width: 901px) {
-  //   display: flex;
-  //   flex-direction: column;
-  //   align-items: flex-start;
-  //   width: 379px;
-
-  //   &.restaurant-card {
-  //     img {
-  //       width: 380px;
-  //       height: 236px;
-  //     }
-  //   }
-
-  //   &.dish-card {
-  //     img {
-  //       width: 380px;
-  //       height: 306px;
-  //     }
-  //   }
-
-  //   &.chef-card {
-  //     width: 231px;
-  //     height: 357px;
-  //     img {
-  //       width: 231px;
-  //       height: 224px;
-  //     }
-  //   }
-
-  //   .card-content {
-  //     display: flex;
-  //     flex-direction: column;
-  //     align-items: center;
-  //     justify-content: center;
-  //     text-align: center;
-  //     gap: 16px;
-
-  //     .icon-dish {
-  //       display: flex;
-  //       width: 40px;
-  //       height: 31px;
-  //       justify-content: center;
-  //       align-items: center;
-  //     }
-
-  //     .icon-rating {
-  //       width: 216px;
-  //       height: 40px;
-  //     }
-
-  //     .icon-nis {
-  //       width: 14px;
-  //       height: 19px;
-  //     }
-
-  //     .card-title {
-  //       text-align: center;
-  //       font-size: 35px;
-  //       font-weight: 400;
-  //       line-height: 47px;
-  //       letter-spacing: 2.67px;
-  //     }
-
-  //     .card-subtitle {
-  //       text-align: center;
-  //       font-size: 24px;
-  //       font-weight: 200;
-  //       line-height: 30px;
-  //       letter-spacing: 1.97px;
-  //     }
-
-  //     &.restaurant-card {
-  //       .card-subtitle {
-  //         width: 146px;
-  //         height: 30px;
-  //       }
-  //     }
-
-  //     &.dish-card {
-  //       .card-subtitle {
-  //         width: 295px;
-  //         height: 123px;
-  //       }
-  //     }
-
-  //     .price-container {
-  //       display: flex;
-  //       justify-content: center;
-  //       align-items: center;
-  //       gap: 8px;
-  //       height: 30px;
-  //       width: 29px;
-
-  //       .card-price {
-  //         text-align: center;
-  //         font-size: 24px;
-  //         font-weight: 200;
-  //         line-height: 30px;
-  //         letter-spacing: 1.97px;
-  //       }
-  //     }
-  //   }
-  // }
 }
