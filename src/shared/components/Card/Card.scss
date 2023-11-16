@@ -7,6 +7,22 @@
   width: 245px;
   margin: 0px;
 
+  &.card-modal-content{
+    background-color:#FFF;
+    .card-content{
+      align-items: center;
+      .card-subtitle {
+        text-align: center;
+      }
+    }
+    @media (min-width: 901px) {
+      img{
+        width: 100%;
+        height: 250px;
+      }
+    }
+  }
+
   &.dish-card {
     .card-subtitle {
       height: 100px;

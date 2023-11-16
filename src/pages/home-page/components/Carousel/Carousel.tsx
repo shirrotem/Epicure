@@ -9,8 +9,9 @@ import './Carousel.scss';
 import CarouselProps from "../../../../data/types/carouselProps";
 
 
-const Carousel: FC<CarouselProps> = ({ type, typeName, title}) => {
+const Carousel: FC<CarouselProps> = ({ type, typeName, title, toggleModal}) => {
   const isMobile = useMobileCheck();
+  
     return(
         <>
         <p className={typeName==='chefRestaurants' ? 'titleSwiperChef' : 'titleSwiper'}>{title}</p>
@@ -35,6 +36,7 @@ const Carousel: FC<CarouselProps> = ({ type, typeName, title}) => {
               icon={element.icon}
               price={element.price}
               type= {typeName}
+              toggleModal={toggleModal}
               />
               </SwiperSlide>
             );
