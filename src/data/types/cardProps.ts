@@ -6,6 +6,6 @@ interface CardProps{
     icon?: string;
     price?: string;
     type: string;
-    toggleModal? : (dishName: string)=>void;
+    handleOnClick? : (dishName: string)=>void;
 }
 export default CardProps;
