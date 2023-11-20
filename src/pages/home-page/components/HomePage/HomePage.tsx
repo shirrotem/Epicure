@@ -10,7 +10,7 @@ import { iconsArray } from "../../../../data/MockData";
 import Modal from "../../../../shared/components/Modal/Modal";
 import Card from "../../../../shared/components/Card/Card";
 import {useAppDispatch, useAppSelector } from "../../../../redux-toolkit/store/store";
-import { setData } from "../../../../redux-toolkit/slices/homePageSlice";
+import {setDataChefOfTheWeek, setDataDishes, setDataRestaurants } from "../../../../redux-toolkit/slices/homePageSlice";
 
 
 const HomePage = () => {
@@ -19,7 +19,9 @@ const HomePage = () => {
     const dispatch= useAppDispatch();
 
     useEffect(()=>{
-      dispatch(setData(data));
+      dispatch(setDataRestaurants(data.restaurants));
+      dispatch(setDataDishes(data.dishes));
+      dispatch(setDataChefOfTheWeek(data.chefOfTheWeek));
     },[]);
 
     return (

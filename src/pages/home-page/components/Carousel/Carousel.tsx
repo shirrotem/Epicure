@@ -12,17 +12,15 @@ import { useAppSelector } from "../../../../redux-toolkit/store/store";
 
 const Carousel: FC<CarouselProps> = ({typeName, title}) => {
   const isMobile = useMobileCheck();
-  const {data}= useAppSelector(state=> state.homePage);
+  const {dataRestaurants, dataDishes, dataChefOfTheWeek}= useAppSelector(state=> state.homePage);
   let type: any;
-  if(typeName==="chefRestaurants"){
-    type= data.chefOfTheWeek.chefRestaurants;
-  }
-  else if(typeName==="dishes"){
-    type= data.dishes;
-  }
-  else if(typeName==="restaurants"){
-    type= data.restaurants;
-  }
+  if (typeName === "chefRestaurants") {
+    type = dataChefOfTheWeek.chefRestaurants;
+  } else if (typeName === "dishes") {
+    type = dataDishes;
+  } else if (typeName === "restaurants") {
+    type = dataRestaurants;
+  } 
   
     return(
         <>

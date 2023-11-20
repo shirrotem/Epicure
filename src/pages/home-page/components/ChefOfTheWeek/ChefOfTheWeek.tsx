@@ -5,8 +5,8 @@ import { useAppSelector } from "../../../../redux-toolkit/store/store";
 
 
 const ChefOfTheWeek = () => {
-    const {data}= useAppSelector(state=> state.homePage);
-    const {name,img,about} = data.chefOfTheWeek;
+    const {dataChefOfTheWeek}= useAppSelector(state=> state.homePage);
+    const {name,img,about} = dataChefOfTheWeek;
     const chefPrivateName= name.split(' ')[0];
     return (
         <div className="chefOfTheWeekContainer">
