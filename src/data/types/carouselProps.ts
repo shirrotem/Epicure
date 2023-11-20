@@ -1,8 +1,9 @@
-interface CarouselProps {
-    type: any;
+import { ChefRestaurant, Dish, Restaurant } from "./data";
+
+export interface CarouselProps {
+  items:{
     typeName: string;
-    title: string;
-    handleOnClick? : (dishName: string)=>void;
-  }
-  
-  export default CarouselProps;
+    carouselType: Restaurant[] | Dish[] | ChefRestaurant[];
+  };
+  title: string;
+}

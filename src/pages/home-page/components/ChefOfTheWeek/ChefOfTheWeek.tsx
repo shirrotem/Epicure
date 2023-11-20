@@ -1,10 +1,12 @@
 import React, { FC } from "react";
 import "./ChefOfTheWeek.scss";
 import Carousel from "../Carousel/Carousel";
-import ChefOfTheWeekProps from "../../../../data/types/chefProps";
-  
-const ChefOfTheWeek: FC<ChefOfTheWeekProps> = ({chef}) => {
-    const {name,img,about,chefRestaurants} = chef;
+import { useAppSelector } from "../../../../redux-toolkit/store/store";
+
+
+const ChefOfTheWeek = () => {
+    const {dataChefOfTheWeek}= useAppSelector(state=> state.homePage);
+    const {name,img,about,chefRestaurants} = dataChefOfTheWeek;
     const chefPrivateName= name.split(' ')[0];
     return (
         <div className="chefOfTheWeekContainer">
@@ -20,7 +22,7 @@ const ChefOfTheWeek: FC<ChefOfTheWeekProps> = ({chef}) => {
             {about}
         </p>
         </div>
-            <Carousel type={chefRestaurants} typeName="chefRestaurants" title={`${chefPrivateName}’s Restaurants:`}/>
+            <Carousel  items={ { typeName: "chefRestaurants", carouselType: chefRestaurants} } title={`${chefPrivateName}’s Restaurants:`}/>
         </div>
         
     );
