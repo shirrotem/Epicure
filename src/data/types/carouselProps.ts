@@ -1,7 +1,9 @@
-interface CarouselProps {
-    typeName: string;
-    title: string;
+import { ChefRestaurant, Dish, Restaurant } from "./data";
 
-  }
-  
-  export default CarouselProps;
+export interface CarouselProps {
+  items:{
+    typeName: string;
+    carouselType: Restaurant[] | Dish[] | ChefRestaurant[];
+  };
+  title: string;
+}

@@ -24,6 +24,7 @@ const HomePage = () => {
       dispatch(setDataChefOfTheWeek(data.chefOfTheWeek));
     },[]);
 
+
     return (
         <>
         {isOpen && (
@@ -40,8 +41,8 @@ const HomePage = () => {
         )}
       
         <Hero/>
-        <Carousel typeName="restaurants" title="POPULAR RESTAURANT IN EPICURE:"/>
-        <Carousel typeName="dishes" title="SIGNATURE DISH OF:"/>
+        <Carousel items={ { typeName: "restaurants", carouselType: data.restaurants } } title="POPULAR RESTAURANT IN EPICURE:" />
+        <Carousel items= { {typeName: "dishes", carouselType: data.dishes }} title="SIGNATURE DISH OF:"/>
         <IconMeaning icons={iconsArray}/>
         <ChefOfTheWeek/>
         <AboutUs />

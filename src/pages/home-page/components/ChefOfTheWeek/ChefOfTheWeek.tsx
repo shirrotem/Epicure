@@ -6,7 +6,7 @@ import { useAppSelector } from "../../../../redux-toolkit/store/store";
 
 const ChefOfTheWeek = () => {
     const {dataChefOfTheWeek}= useAppSelector(state=> state.homePage);
-    const {name,img,about} = dataChefOfTheWeek;
+    const {name,img,about,chefRestaurants} = dataChefOfTheWeek;
     const chefPrivateName= name.split(' ')[0];
     return (
         <div className="chefOfTheWeekContainer">
@@ -22,7 +22,7 @@ const ChefOfTheWeek = () => {
             {about}
         </p>
         </div>
-            <Carousel typeName="chefRestaurants" title={`${chefPrivateName}’s Restaurants:`}/>
+            <Carousel  items={ { typeName: "chefRestaurants", carouselType: chefRestaurants} } title={`${chefPrivateName}’s Restaurants:`}/>
         </div>
         
     );

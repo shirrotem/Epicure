@@ -6,25 +6,16 @@ import {FC} from 'react';
 import useMobileCheck from "../../../../shared/hooks/useMobileCheck";
 import arrowsIcon from "../../../../assets/icons/arrows.svg";
 import './Carousel.scss';
-import CarouselProps from "../../../../data/types/carouselProps";
 import { useAppSelector } from "../../../../redux-toolkit/store/store";
+import { CarouselProps } from "../../../../data/types/carouselProps";
 
 
-const Carousel: FC<CarouselProps> = ({typeName, title}) => {
+const Carousel: FC<CarouselProps> = ({items, title}) => {
   const isMobile = useMobileCheck();
-  const {dataRestaurants, dataDishes, dataChefOfTheWeek}= useAppSelector(state=> state.homePage);
-  let type: any;
-  if (typeName === "chefRestaurants") {
-    type = dataChefOfTheWeek.chefRestaurants;
-  } else if (typeName === "dishes") {
-    type = dataDishes;
-  } else if (typeName === "restaurants") {
-    type = dataRestaurants;
-  } 
   
     return(
         <>
-        <p className={typeName==='chefRestaurants' ? 'titleSwiperChef' : 'titleSwiper'}>{title}</p>
+        <p className={items.typeName==='chefRestaurants' ? 'titleSwiperChef' : 'titleSwiper'}>{title}</p>
         <Swiper
           slidesPerView={isMobile? 'auto' : 3}
           spaceBetween={30}
@@ -34,10 +25,10 @@ const Carousel: FC<CarouselProps> = ({typeName, title}) => {
           className="myCarousel"
         
         >
-          {type.map((element: any, index: number)=> {
-            const isDish = typeName === "dishes";
+          {items.carouselType.map((element: any, index: number)=> {
+            const isDish = items.typeName === "dishes";
             return(
-              <SwiperSlide key={index} className={typeName === 'chefRestaurants' ? 'swiperSlideChef' : "swiperSlideCarousel"}>
+              <SwiperSlide key={index} className={items.typeName === 'chefRestaurants' ? 'swiperSlideChef' : "swiperSlideCarousel"}>
               <Card
               title= {element.name}
               img= {element.img}
@@ -45,13 +36,13 @@ const Carousel: FC<CarouselProps> = ({typeName, title}) => {
               rating={element.rating}
               icon={element.icon}
               price={element.price}
-              type= {typeName}
+              type= {items.typeName}
               />
               </SwiperSlide>
             );
           })}
         </Swiper>
-       {(isMobile || (!isMobile && typeName=== 'restaurants')) && <p className="allRestaurants">All Restaurants
+       {(isMobile || (!isMobile && items.typeName=== 'restaurants')) && <p className="allRestaurants">All Restaurants
           <img className="picAllRes" src={arrowsIcon}/></p>}
       </>
 
