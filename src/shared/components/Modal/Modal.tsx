@@ -1,13 +1,20 @@
 
 import React from 'react';
 import './Modal.scss';
+import { useAppDispatch, useAppSelector } from '../../../redux-toolkit/store/store';
+import { setIsOpen } from '../../../redux-toolkit/slices/homePageSlice';
 
 interface ModalProps {
-  onClose: () => void;
   children: React.ReactNode;
 }
 
-const Modal: React.FC<ModalProps> = ({ onClose, children }) => {
+const Modal: React.FC<ModalProps> = ({ children }) => {
+  const { isOpen }= useAppSelector(state=> state.homePage);
+  const dispatch= useAppDispatch();
+
+  const onClose = () => {
+    dispatch(setIsOpen(!isOpen));
+  };
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div>

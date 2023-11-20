@@ -1,17 +1,34 @@
-import React from "react";
+import React, { useCallback } from "react";
 import './Card.scss';
 import {FC} from 'react';
 import ratingsArr from "../../../data/cardData";
 import nisIcon from '../../../assets/icons/nis.svg';
 import useMobileCheck from "../../hooks/useMobileCheck";
 import CardProps from "../../../data/types/cardProps";
+import { useAppDispatch, useAppSelector } from "../../../redux-toolkit/store/store";
+import { setIsOpen, setSelectedDish } from "../../../redux-toolkit/slices/homePageSlice";
 
-const Card: FC<CardProps> = ({ title, img, subtitle, rating, icon, price, type, handleOnClick }) => {
+const Card: FC<CardProps> = ({ title, img, subtitle, rating, icon, price, type }) => {
+
+    const {isOpen, data}= useAppSelector(state=> state.homePage);
+    const dispatch = useAppDispatch();
     const isMobile = useMobileCheck();
     const isRestaurant = type === 'restaurants';
     const isDish = type === 'dishes';
     const isChef = type === 'chefRestaurants';
     const isDishModal = type === 'dishes-Modal';
+
+    let handleOnClick : any = undefined;
+
+    if(isDish){
+        handleOnClick = useCallback((dishName: string = '') => {
+        const dish = data.dishes.find(dishObj => dishObj.name === dishName);
+        if(dish){
+          dispatch(setSelectedDish(dish));
+        }
+        dispatch(setIsOpen(!isOpen));
+      }, [data.dishes, isOpen]);
+    }
 
     return (
       <div onClick={isDish && handleOnClick ? ()=> handleOnClick(title) : undefined} className={`card ${isRestaurant ? 'restaurant-card' : isDish ? 'dish-card' : isChef ? 'chef-card' : isDishModal ? 'card-modal-content' : ''}`}>

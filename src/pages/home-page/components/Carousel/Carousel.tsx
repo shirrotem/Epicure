@@ -7,10 +7,22 @@ import useMobileCheck from "../../../../shared/hooks/useMobileCheck";
 import arrowsIcon from "../../../../assets/icons/arrows.svg";
 import './Carousel.scss';
 import CarouselProps from "../../../../data/types/carouselProps";
+import { useAppSelector } from "../../../../redux-toolkit/store/store";
 
 
-const Carousel: FC<CarouselProps> = ({ type, typeName, title, handleOnClick}) => {
+const Carousel: FC<CarouselProps> = ({typeName, title}) => {
   const isMobile = useMobileCheck();
+  const {data}= useAppSelector(state=> state.homePage);
+  let type: any;
+  if(typeName==="chefRestaurants"){
+    type= data.chefOfTheWeek.chefRestaurants;
+  }
+  else if(typeName==="dishes"){
+    type= data.dishes;
+  }
+  else if(typeName==="restaurants"){
+    type= data.restaurants;
+  }
   
     return(
         <>
@@ -36,7 +48,6 @@ const Carousel: FC<CarouselProps> = ({ type, typeName, title, handleOnClick}) =>
               icon={element.icon}
               price={element.price}
               type= {typeName}
-              handleOnClick={handleOnClick}
               />
               </SwiperSlide>
             );
