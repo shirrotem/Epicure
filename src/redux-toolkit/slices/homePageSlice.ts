@@ -6,7 +6,6 @@ import {
   getSignatureDish,
   getChefs,
 } from "../thunks/homePageThunk";
-import { rmdirSync } from "fs";
 
 interface HomePageState {
   selectedDish: Dish | null;
@@ -45,16 +44,21 @@ const homePageSlice = createSlice({
     setDataChefOfTheWeek(state, action: PayloadAction<Chef>) {
       state.dataChefOfTheWeek = action.payload;
     },
+    setDataChefs(state, action: PayloadAction<Chef[]>) {
+      state.dataChefs = action.payload;
+    },
   },
 
   extraReducers(builder) {
     builder
       .addCase(getPopularRestaurants.fulfilled, (state, action: PayloadAction<any>) => {
         const restaurants = action.payload.map((res: any) => {
+          const chefData = state.dataChefs.find((chef) => chef._id === res.chef);
+          const chefName = chefData ? chefData.name : "Unknown Chef";
           return {
             img: res.img,
             name: res.name,
-            chef: state.dataChefs.find((chef: Chef) => chef.chefRestaurants.includes(res._id)),
+            chef: chefName,
             rating: res.rating,
             _id: res._id,
           };

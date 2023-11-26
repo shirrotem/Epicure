@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import "./ChefOfTheWeek.scss";
 import Carousel from "../Carousel/Carousel";
 import { useAppSelector } from "../../../../redux-toolkit/store/store";

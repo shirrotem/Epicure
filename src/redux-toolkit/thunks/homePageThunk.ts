@@ -2,7 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const getPopularRestaurants = createAsyncThunk("popularRestaurants", async () => {
   try {
-    const response = await fetch("http://localhost:3000/getPopularRestaurants");
+    const response = await fetch(process.env.REACT_APP_GET_POPULAR_RESTAURANTS_URL!);
     if (!response.ok) {
       throw new Error("Request to server failed!");
     }
@@ -16,7 +16,7 @@ export const getPopularRestaurants = createAsyncThunk("popularRestaurants", asyn
 
 export const getSignatureDish = createAsyncThunk("SignatureDish", async () => {
   try {
-    const response = await fetch("http://localhost:3000/getSignatureDish");
+    const response = await fetch(process.env.REACT_APP_GET_SIGNATURE_DISH_URL!);
     if (!response.ok) {
       throw new Error("Request to server failed!");
     }
@@ -30,7 +30,7 @@ export const getSignatureDish = createAsyncThunk("SignatureDish", async () => {
 
 export const getChefOfTheWeek = createAsyncThunk("ChefOfTheWeek", async () => {
   try {
-    const response = await fetch("http://localhost:3000/getChefOfTheWeek");
+    const response = await fetch(process.env.REACT_APP_GET_CHEF_OF_THE_WEEK_URL!);
     if (!response.ok) {
       throw new Error("Request to server failed!");
     }
@@ -44,7 +44,7 @@ export const getChefOfTheWeek = createAsyncThunk("ChefOfTheWeek", async () => {
 
 export const getChefs = createAsyncThunk("chefs", async () => {
   try {
-    const response = await fetch("http://localhost:3000/chefs");
+    const response = await fetch(process.env.REACT_APP_GET_CHEFS_URL!);
     if (!response.ok) {
       throw new Error("Request to server failed!");
     }
