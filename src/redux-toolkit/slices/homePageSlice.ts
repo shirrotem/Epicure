@@ -1,11 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { Chef, Dish, Restaurant } from "../../data/types/data";
-import {
-  getPopularRestaurants,
-  getChefOfTheWeek,
-  getSignatureDish,
-  getChefs,
-} from "../thunks/homePageThunk";
+import { getPopularRestaurants, getChefOfTheWeek, getSignatureDish } from "../thunks/homePageThunk";
+import { iconMap } from "../../data/IconData";
 
 interface HomePageState {
   selectedDish: Dish | null;
@@ -53,12 +49,10 @@ const homePageSlice = createSlice({
     builder
       .addCase(getPopularRestaurants.fulfilled, (state, action: PayloadAction<any>) => {
         const restaurants = action.payload.map((res: any) => {
-          const chefData = state.dataChefs.find((chef) => chef._id === res.chef);
-          const chefName = chefData ? chefData.name : "Unknown Chef";
           return {
             img: res.img,
             name: res.name,
-            chef: chefName,
+            chef: res.chef.name,
             rating: res.rating,
             _id: res._id,
           };
@@ -73,7 +67,7 @@ const homePageSlice = createSlice({
           return {
             img: dish.img,
             name: dish.name,
-            icon: dish.icon,
+            icon: iconMap[dish.icon],
             ingredients: dish.ingredients,
             price: dish.price,
             _id: dish._id,
@@ -86,8 +80,7 @@ const homePageSlice = createSlice({
       })
       .addCase(getChefOfTheWeek.fulfilled, (state, action: PayloadAction<any>) => {
         const chef = action.payload[0];
-        const chefRes = state.dataRestaurants.filter((res) => chef.restaurants.includes(res._id));
-        const chefRestaurants = chefRes.map((res) => {
+        const chefRestaurants = chef.restaurants.map((res: Restaurant) => {
           return {
             name: res.name,
             img: res.img,
@@ -104,23 +97,6 @@ const homePageSlice = createSlice({
       })
       .addCase(getChefOfTheWeek.rejected, (state) => {
         state.dataChefOfTheWeek = { img: "", name: "", about: "", chefRestaurants: [], _id: "" };
-      })
-      .addCase(getChefs.fulfilled, (state, action: PayloadAction<any>) => {
-        const chefs = action.payload.map((chef: any) => {
-          const chefRes = state.dataRestaurants.find((res) => chef.restaurants.includes(res._id));
-
-          return {
-            name: chef.name,
-            img: chef.img,
-            about: chef.about,
-            chefRestaurants: chefRes ? [chefRes] : [],
-            _id: chef._id,
-          };
-        });
-        state.dataChefs = chefs;
-      })
-      .addCase(getChefs.rejected, (state) => {
-        state.dataChefs = [];
       });
   },
 });

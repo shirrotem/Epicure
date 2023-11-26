@@ -11,7 +11,6 @@ import Card from "../../../../shared/components/Card/Card";
 import { useAppDispatch, useAppSelector } from "../../../../redux-toolkit/store/store";
 import {
   getChefOfTheWeek,
-  getChefs,
   getPopularRestaurants,
   getSignatureDish,
 } from "../../../../redux-toolkit/thunks/homePageThunk";
@@ -19,11 +18,8 @@ import {
 const HomePage = () => {
   const { selectedDish, isOpen } = useAppSelector((state) => state.homePage);
   const dispatch = useAppDispatch();
-  const { dataRestaurants, dataDishes, dataChefOfTheWeek, dataChefs } = useAppSelector(
-    (state) => state.homePage
-  );
+  const { dataRestaurants, dataDishes } = useAppSelector((state) => state.homePage);
   useEffect(() => {
-    dispatch(getChefs());
     dispatch(getPopularRestaurants());
     dispatch(getSignatureDish());
     dispatch(getChefOfTheWeek());
